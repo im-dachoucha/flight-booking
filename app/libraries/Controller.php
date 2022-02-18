@@ -9,6 +9,7 @@ class Controller{
 
     public function view($view, $data = []){
         if(file_exists(APPROOT . "/views/" . $view . ".php")){
+            extract($data);
             require_once APPROOT . "/views/" . $view . ".php";
         }else {die("view doesn't exist!!!");}
     }
