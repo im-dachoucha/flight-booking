@@ -1,4 +1,4 @@
-<?php require_once APPROOT . "/partials/header.php"?>
+<?php require_once APPROOT . "/partials/adminHeader.php"?>
 <body>
     <nav class="navbar bg-dark p-5 mb-5"></nav>
     <!-- <div class="container d-flex justify-content-end">

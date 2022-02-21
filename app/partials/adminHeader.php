@@ -1,3 +1,4 @@
+<?php if(!isset($_SESSION["adminId"])) {header("Location: " . url("adminLogin"));die();}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

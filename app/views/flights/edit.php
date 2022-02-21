@@ -1,4 +1,4 @@
-<?php require_once APPROOT . "/partials/header.php"?>
+<?php require_once APPROOT . "/partials/adminHeader.php"?>
 <?php $flight = $flight[0];?>
 <body>
     <nav class="navbar bg-dark p-5 mb-5"></nav>
