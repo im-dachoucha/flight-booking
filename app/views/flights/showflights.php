@@ -1,10 +1,9 @@
 <?php require_once APPROOT . "/partials/adminHeader.php"?>
 <body>
-    <nav class="navbar bg-dark p-5 mb-5"></nav>
+    <?php require_once APPROOT . "/partials/adminNav.php"?>
     <!-- <div class="container d-flex justify-content-end">
     </div> -->
         <div class="container">
-            <!-- <a href="<?=BURL?>/flights/add" class="link-light"><button class="btn btn-success btn-sm"><i class="fa-solid fa-plus"></i></button></a> -->
             <table class="table">
                 <thead>
                     <tr>
@@ -34,11 +33,13 @@
                         <td>
                             <form action="<?=url("flights/delete")?>" method="POST" class="d-inline">
                                 <input type="text" name="id" hidden value="<?=$flight['flightId']?>">
-                                <input type="submit" value="delete" name="delete" class="btn btn-outline-danger btn-sm">
+                                <!-- <input type="submit" value="delete" name="delete" class="btn btn-outline-danger btn-sm"> -->
+                                <button type="submit" value="delete" name="delete" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
                             </form>
                             <form action="<?=url("flights/edit")?>" method="POST" class="d-inline">
                                 <input type="text" name="id" hidden value="<?=$flight['flightId']?>">
-                                <input type="submit" value="edit" name="edit" class="btn btn-outline-primary btn-sm">
+                                <!-- <input type="submit" value="edit" name="edit" class="btn btn-outline-primary btn-sm"> -->
+                                <button type="submit" value="edit" name="edit" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
                             </form>
                             <!-- <a class="btn btn-danger btn-sm">delete</a> -->
                             <!-- <a class="btn btn-primary btn-sm">edit</a> -->

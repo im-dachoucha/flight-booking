@@ -1,7 +1,7 @@
 <?php require_once APPROOT . "/partials/adminHeader.php"?>
 <?php $flight = $flight[0];?>
 <body>
-    <nav class="navbar bg-dark p-5 mb-5"></nav>
+    <?php require_once APPROOT . "/partials/adminNav.php"?>
     <div class="container">
         <form action="<?=url("flights/update")?>" method="POST">
         <input type="text" name="id" hidden value="<?=$flight["flightId"]?>">
@@ -29,7 +29,7 @@
                 <label for="price" class="form-label">price</label>
                 <input required type="number" step="0.1" class="form-control" id="price" name="price" value="<?=$flight["price"]?>">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </form>
     </div>
 </body>

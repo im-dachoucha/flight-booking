@@ -1,0 +1,1 @@
+<nav class="navbar bg-dark p-5 mb-5 d-flex justify-content-end"><a href="<?=url("adminlogin/logout")?>" class="btn btn-danger btn-sm"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></nav>

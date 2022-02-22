@@ -1,6 +1,6 @@
 <?php require_once APPROOT . "/partials/adminHeader.php"?>
 <body>
-    <nav class="navbar bg-dark p-5 mb-5"></nav>
+    <?php require_once APPROOT . "/partials/adminNav.php"?>
     <div class="container">
         <form action="<?=url("flights/add")?>" method="POST">
             <div class="mb-3">
@@ -27,7 +27,7 @@
                 <label for="price" class="form-label">price</label>
                 <input required type="number" step="0.1" class="form-control" id="price" name="price">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>
 </body>

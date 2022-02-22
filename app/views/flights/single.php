@@ -1,6 +1,6 @@
 <?php require_once APPROOT . "/partials/adminHeader.php"?>
 <body>
-    <nav class="navbar bg-dark p-5 mb-5"></nav>
+    <?php require_once APPROOT . "/partials/adminNav.php"?>
     <div class="container">
         <?php if(!empty($flight)):
             $flight = $flight[0]?>

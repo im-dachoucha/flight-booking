@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION["adminId"])) {header("Location: " . url("flights"));die();}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +14,14 @@
 </head>
 <body>
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <form class="col-3 p-3" action="">
+        <form class="col-md-4 p-3" action="<?=url("adminLogin/login")?>" method="POST">
             <div class="mb-3">
                 <label class="form-label" for="username">username</label>
-                <input class="form-control" type="text" name="username" id="username">
+                <input class="form-control" type="text" name="username" id="username" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="password">password</label>
-                <input class="form-control" type="text" name="password" id="password">
+                <input class="form-control" type="password" name="password" id="password" required>
             </div>
             <button class="btn btn-primary">Login</button>
         </form>
