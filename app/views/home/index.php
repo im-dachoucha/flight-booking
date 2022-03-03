@@ -10,8 +10,8 @@
     <title><?= $title ?></title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body style="height:100vh;">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">flight booking site</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -19,17 +19,41 @@
             </button>
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav justify-content-end flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-danger px-3 me-2"><a class="link-light" href="#">login</a></button>
+                        <button type="button" class="btn btn-outline-danger me-3"><a class="link-light" href="#">register</a></button>
+                    </div>
                 </ul>
-                <div class="d-flex align-items-center">
-                    <button type="button" class="btn btn-danger px-3 me-2"><a class="link-light" href="#">login</a></button>
-                    <button type="button" class="btn btn-outline-danger me-3"><a class="link-light" href="#">register</a></button>
-                </div>
             </div>
         </div>
     </nav>
+    <section class="d-flex justify-content-start align-items-center" style="background: url('<?= BURL . "/public/img/main-bg-1.avif" ?>') no-repeat;background-size: 100%;height:90vh;">
+        <div class="container">
+            <form action="" method="POST" class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <h3 class="mb-5">Sign in</h3>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="email">Email</label>
+                                <input type="email" id="email" class="form-control form-control-lg" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" id="password" class="form-control form-control-lg" />
+                            </div>
+
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>
