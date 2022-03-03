@@ -1,6 +1,6 @@
 <?php
 class Core{
-    protected $controller = "home";
+    protected $controller = "users";
     protected $action = "index";
     protected $params = [];
 
