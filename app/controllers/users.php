@@ -24,7 +24,7 @@ class Users extends Controller{
         }
         session_start();
         $_SESSION["userId"] = $user[0]["userId"];
-        // header("Location: " . url("home"));
+        header("Location: " . url("home"));
     }
 
     public function register(){
@@ -46,5 +46,11 @@ class Users extends Controller{
             echo "<pre>";
             echo $e->getMessage();
         }
+    }
+
+    public function logout(){
+        session_start();
+        unset($_SESSION["userId"]);
+        header("Location: " . url("users"));
     }
 }

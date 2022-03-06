@@ -48,7 +48,7 @@
 
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 
-                            <p>don't have an account yet? <a href="register">register</a></p>
+                            <p class="mt-3">don't have an account yet? <a href="<?=BURL . "/users/register"?>">register</a></p>
 
                         </div>
                     </div>

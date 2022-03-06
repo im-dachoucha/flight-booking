@@ -38,12 +38,12 @@
 
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="first">first name</label>
-                                <input type="first" id="first" name="first" class="form-control form-control-lg" />
+                                <input type="text" id="first" name="first" class="form-control form-control-lg" />
                             </div>
 
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="last">last name</label>
-                                <input type="last" id="last" name="last" class="form-control form-control-lg" />
+                                <input type="text" id="last" name="last" class="form-control form-control-lg" />
                             </div>
 
                             <div class="form-outline mb-4">
@@ -63,8 +63,8 @@
 
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 
-                            <p>have an account already? <a href="users">login</a></p>
-
+                            
+                            <p class="mt-3">have an account already? <a href="<?=BURL . "/users"?>">login</a></p>
                         </div>
                     </div>
                 </div>
