@@ -28,4 +28,8 @@ class Flight extends Model{
     public function edit_flight($values){
         $this->execute("UPDATE `" . $this->table . "` SET `departureDate` = ?, `arrivalDate` = ?, `departureAirport` = ?, `arrivalAirport` = ?, `nbrSeats` = ?, `price` = ? WHERE `" . $this->primaryKey . "` = ?", $values);
     }
+
+    public function search_flights($values){
+        return $this->execute("SELECT * FROM `" . $this->table . "` WHERE `departureAirport` LIKE ? AND `arrivalAirport` LIKE ? AND  `arrivalDate` >= ? AND `nbrSeats` - `nbrSeatsReserved` >= ?", $values);
+    }
 }

@@ -79,4 +79,31 @@ class Flights extends Controller{
         header("Location: " . url("flights"));
         die();
     }
+    public function search_flights(){
+        if($_SERVER["REQUEST_METHOD"] !== "GET"){
+            header("Location: " . url("home"));
+            die();
+        }
+        $trip = $_GET["trip"];
+        $from = $_GET["from"];
+        $to = $_GET["to"];
+        $departure = $_GET["departure"];
+        $return = $_GET["return"];
+        $seats = $_GET["seats"];
+
+        $res1 = $this->model->search_flights([$from, $to, $departure, $seats]);
+        if(count($res1) <= 0){
+            $this->view("flights/search", ["title" => "search flights", "error" => "no flight was found!!!"]);
+        }
+        elseif($trip === "round"){
+            $res2 = $this->model->search_flights([$to, $from, $return, $seats]);
+            if(count($res2) <= 0){
+                $this->view("flights/search", ["title" => "search flights", "error" => "no flight was found!!!"]);
+            }
+            else $this->view("flights/search", ["title" => "search flights", "res1" => $res1, "res2" => $res2, "trip" => $trip, "seats" => $seats]);
+        }else{
+            $this->view("flights/search", ["title" => "search flights", "res1" => $res1, "trip" => $trip, "seats" => $seats]);
+        }
+
+    }
 }

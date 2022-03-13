@@ -36,7 +36,7 @@
     </nav>
     <main style="min-height: 90vh;" class=" d-flex justify-content-center align-items-center">
         <div class="container">
-            <form action="" method="GET" class="row d-flex justify-content-start align-items-center h-100">
+            <form action="<?=url("flights/search_flights")?>" method="GET" class="row d-flex justify-content-start align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong bg-light bg-opacity-75" style="border-radius: 1rem;">
                         <div class="card-body p-5">
@@ -73,6 +73,11 @@
                             <div class="form-outline mb-2 returnDiv" hidden>
                                 <label class="form-label" for="return">return</label>
                                 <input type="date" id="return" name="return" class="form-control form-control-md"/>
+                            </div>
+
+                            <div class="form-outline mb-2 returnDiv">
+                                <label class="form-label" for="seats">number of seats</label>
+                                <input type="number" min="1" id="seats" name="seats" class="form-control form-control-md" required/>
                             </div>
 
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Search</button>
