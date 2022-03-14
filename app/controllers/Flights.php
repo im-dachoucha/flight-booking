@@ -106,4 +106,18 @@ class Flights extends Controller{
         }
 
     }
+
+    public function reserve_seats(){
+        if($_SERVER["REQUEST_METHOD"] !== "POST"){
+            header("Location: " . url("home"));
+            die();
+        }
+        $flight1 = $_POST["f1"];
+        $flight2 = isset($_POST["f2"]) ? $_POST["f2"] : "";
+        $trip = $_POST["trip"];
+        $seats = $_POST["seats"];
+
+        $this->view("flights/reserve_seats", ["title" => "reserve seats", "flight1" => $flight1, "flight2" => $flight2, "trip" => $trip, "seats" => $seats]);
+        
+    }
 }
