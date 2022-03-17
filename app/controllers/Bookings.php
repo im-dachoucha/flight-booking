@@ -4,6 +4,13 @@ class Bookings extends Controller{
     {
         $this->model = $this->model("Booking");;
     }
+
+    public function bookings(){
+        session_start();
+        $userId = $_SESSION["userId"];
+        $bookings = $this->model->get_user_bookings($userId);
+        $this->view("bookings/bookings", ["title" => "bookings", "bookings" => $bookings]);
+    }
     
     public function book(){
         if($_SERVER["REQUEST_METHOD"] !== "POST"){
@@ -30,5 +37,6 @@ class Bookings extends Controller{
                 $this->model->book($params);
             }   
         }
+        header("Location: " . url("bookings/bookings"));
     }
 }

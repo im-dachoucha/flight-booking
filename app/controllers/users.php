@@ -7,7 +7,7 @@ class Users extends Controller{
     }
 
     public function index(){
-        $this->view("/users/index");
+        $this->view("/users/index", ["title" => "login"]);
     }
 
     public function login(){
@@ -29,7 +29,7 @@ class Users extends Controller{
 
     public function register(){
         if($_SERVER["REQUEST_METHOD"] !== "POST"){
-            $this->view("/users/register");
+            $this->view("/users/register", ["title" => "register"]);
             die();
         }
         try{
@@ -40,7 +40,7 @@ class Users extends Controller{
             $pass = $_POST["pass"];
             $data = [$first,$last, $email, $pass, $birthdate];
             $this->model->add_user($data);
-            $this->view("/users/index");
+            $this->index();
         }
         catch(Exception $e){
             echo "<pre>";

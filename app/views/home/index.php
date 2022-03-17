@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["userId"])){
+    header("Location: " . url("users"));
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,10 +30,10 @@
                     <div class="d-flex align-items-center">
                         <?php session_start();
                         if (!isset($_SESSION["userId"])) : ?>
-                            <button type="button" class="btn btn-danger px-3 me-2"><a class="link-light" href="#">login</a></button>
-                            <button type="button" class="btn btn-outline-danger me-3"><a class="link-light" href="#">register</a></button>
+                            <button type="button" class="btn btn-danger px-3 me-2"><a class="link-light" href="<?=url("users/login")?>">login</a></button>
+                            <button type="button" class="btn btn-outline-danger me-3"><a class="link-light" href="<?=url("users/register")?>">register</a></button>
                         <?php else : ?>
-                            <button type="button" class="btn btn-success rounded-pill me-2"><a style="text-decoration: none;color: white" href="">profile</a></button>
+                            <button type="button" class="btn btn-success rounded-pill me-2"><a style="text-decoration: none;color: white" href="<?=url("bookings/bookings")?>">My bookings</a></button>
                             <button type="button" class="btn btn-danger rounded-pill me-2"><a style="text-decoration: none;color: white" href="<?= url("users/logout") ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></button>
                         <?php endif; ?>
                     </div>
